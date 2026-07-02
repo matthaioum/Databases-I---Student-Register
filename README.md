@@ -59,7 +59,7 @@ python init_db.py
 python app.py
 ```
 
-The app will start a local Flask development server (by default at `http://127.0.0.1:5000`).
+The app will start a local Flask development server (by default)
 
 ## Database Schema
 
