@@ -1,0 +1,11 @@
+
+<h2>Μαθήματα Φοιτητή</h2>
+<form method="post">
+    ID Φοιτητή: <input type="text" name="student_id">
+    <input type="submit" value="Αναζήτηση">
+</form>
+<ul>
+{% for row in results %}
+    <li>{{ row.course_id }} - {{ row.course_name }}</li>
+{% endfor %}
+</ul>

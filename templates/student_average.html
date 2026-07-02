@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Μέσος Όρος Βαθμών Φοιτητή</title>
+</head>
+<body>
+    <h1>Μέσος Όρος Βαθμών Φοιτητή</h1>
+    <form method="post">
+        <label for="student_id">Αριθμός Φοιτητή:</label>
+        <input type="text" name="student_id" required>
+        <button type="submit">Υπολογισμός</button>
+    </form>
+
+    {% if all_avg is not none %}
+        <h3>Μέσος Όρος Όλων των Εξετάσεων: {{ all_avg }}</h3>
+        <h3>Μέσος Όρος Επιτυχών Εξετάσεων: {{ passed_avg }}</h3>
+    {% elif request.method == 'POST' %}
+        <p>⚠️ Δεν βρέθηκαν εξετάσεις για τον φοιτητή.</p>
+    {% endif %}
+</body>
+</html>

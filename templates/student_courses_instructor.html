@@ -1,0 +1,12 @@
+
+<h2>Μαθήματα Φοιτητή με Συγκεκριμένο Διδάσκοντα</h2>
+<form method="post">
+    ID Φοιτητή: <input type="text" name="student_id"><br>
+    ID Διδάσκοντα: <input type="text" name="instructor_id"><br>
+    <input type="submit" value="Αναζήτηση">
+</form>
+<ul>
+{% for row in results %}
+    <li>{{ row.course_name }} - {{ row.exam_date }} - {{ row.exam_grade }} ({{ row.exam_result }})</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Πρακτικές Ασκήσεις</title>
+</head>
+<body>
+    <h1>Πρακτικές Ασκήσεις</h1>
+    <ul>
+    {% for row in results %}
+        <li>
+            {{ row['student_id'] }} – {{ row['student_name'] }} {{ row['student_surname'] }}:
+            {{ row['practical_position'] }} στην {{ row['company'] }},
+            Διάρκεια: {{ row['duration'] }},
+            Αξιολόγηση: {{ row['practical_evaluation'] }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

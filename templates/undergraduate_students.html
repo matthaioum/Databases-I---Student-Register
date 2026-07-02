@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Φοιτητές</title>
+</head>
+<body>
+    <h1>Κατάλογος Φοιτητών</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Όνομα</th>
+            <th>Επώνυμο</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row['student_id'] }}</td>
+            <td>{{ row['student_name'] }}</td>
+            <td>{{ row['student_surname'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

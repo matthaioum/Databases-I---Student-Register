@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Αξιολογήσεις Διδασκόντων</title>
+</head>
+<body>
+    <h1>Αξιολογήσεις Διδασκόντων</h1>
+    <ul>
+    {% for row in results %}
+        <li>
+            Αξιολόγηση {{ row['evaluation_id'] }} – Διδάσκων {{ row['instructor_id'] }} –
+            Μάθημα {{ row['course_id'] }} – Βαθμολογία: {{ row['rating'] }}/5
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

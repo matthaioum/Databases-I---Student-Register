@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Πρόγραμμα Μαθημάτων</title>
+</head>
+<body>
+    <h1>Πρόγραμμα Μαθημάτων</h1>
+    <ul>
+    {% for row in results %}
+        <li>{{ row['course_name'] }} - {{ row['day'] }} {{ row['time'] }} ({{ row['classroom'] }}) – {{ row['instructor_name'] }} {{ row['instructor_surname'] }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

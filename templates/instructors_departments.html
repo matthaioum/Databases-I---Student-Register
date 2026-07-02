@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Διδάσκοντες και Τμήματα</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Διδάσκοντες και Τμήματα</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Βαθμίδα</th>
+            <th>Ονοματεπώνυμο</th>
+            <th>Ειδικότητα</th>
+            <th>Τμήμα</th>
+            <th>Τοποθεσία</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row['instructor_id'] }}</td>
+            <td>{{ row['rank'] }}</td>
+            <td>{{ row['instructor_name'] }} {{ row['instructor_surname'] }}</td>
+            <td>{{ row['specialty'] }}</td>
+            <td>
+                {% if row['department_name'] %}
+                    {{ row['department_name'] }}
+                {% else %}
+                    Χωρίς Τμήμα
+                {% endif %}
+            </td>
+            <td>
+                {% if row['location'] %}
+                    {{ row['location'] }}
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

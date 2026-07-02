@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Υποτροφίες και Οικονομική Ενίσχυση</title>
+</head>
+<body>
+    <h1>Υποτροφίες και Οικονομική Ενίσχυση</h1>
+    <ul>
+    {% for row in results %}
+        <li>
+           {{ row['student_id'] }} - {{ row['student_name'] }} {{ row['student_surname'] }} - {{ row['scholarship_type'] }} - Διάρκεια: {{ row['scholarship_start'] }} - {{ row['scholarship_end'] }} - {{ row['scholarship_status'] }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

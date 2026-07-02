@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Βαθμολογία Φοιτητή</title>
+</head>
+<body>
+    <h1>Βαθμολογία Φοιτητή</h1>
+    <form method="post">
+        <label for="student_id">Αριθμός Φοιτητή:</label>
+        <input type="text" name="student_id" required>
+        <button type="submit">Αναζήτηση</button>
+    </form>
+
+    {% if results %}
+        <table border="1">
+            <tr>
+                <th>Μάθημα</th>
+                <th>Βαθμός</th>
+                <th>Αποτέλεσμα</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row['course_name'] }}</td>
+                <td>{{ row['exam_grade'] }}</td>
+                <td>{{ row['exam_result'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        {% if request.method == 'POST' %}
+            <p><strong>⚠️ Δεν βρέθηκαν βαθμοί για τον φοιτητή.</strong></p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

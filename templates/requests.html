@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Αιτήματα Φοιτητών</title>
+</head>
+<body>
+    <h1>Αιτήματα Φοιτητών</h1>
+    <ul>
+    {% for row in results %}
+        <li>
+            {{ row['request_id'] }} – {{ row['student_id'] }} – {{ row['student_name'] }} {{ row['student_surname'] }} –
+            {{ row['request_date'] }} – {{ row['request_status'] }}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
